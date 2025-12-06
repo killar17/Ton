@@ -73,3 +73,8 @@ waitForPort = 5000
 
 [workflows.workflow.metadata]
 outputType = "webview"
+
+[deployment]
+deploymentTarget = "static"
+build = ["npm", "run", "build", "--prefix", "ton-id-app"]
+publicDir = "ton-id-app/dist"
