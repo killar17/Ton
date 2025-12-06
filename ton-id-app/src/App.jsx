@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { TonConnectButton, useTonAddress, useTonWallet } from '@tonconnect/ui-react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const wallet = useTonWallet();
+  const userFriendlyAddress = useTonAddress();
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <header className="App-header">
+        <h1>TON Identity Linker</h1>
+
+        <TonConnectButton />
+
+        {wallet ? (
+          <div className="status-box connected">
+            <h2>✅ Wallet Connected!</h2>
+            <p>
+              **Your Decentralized ID (DID):**<br />
+              <code className="address-code">{userFriendlyAddress}</code>
+            </p>
+            <p>
+              This address is your unique digital fingerprint on TON.
+            </p>
+
+            <button className="primary-button">Manage My Links</button>
+
+          </div>
+        ) : (
+          <div className="status-box disconnected">
+            <h2>Please Connect Your Wallet</h2>
+            <p>Connect your Telegram Wallet or Tonkeeper to prove ownership and start building your decentralized Link-in-Bio profile.</p>
+          </div>
+        )}
+
+      </header>
+    </div>
+  );
 }
 
-export default App
+export default App;
