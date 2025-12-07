@@ -12,13 +12,16 @@
   },
   "dependencies": {
     "@ton/core": "^0.62.0",
+    "@ton/crypto": "^3.3.0",
     "@ton/ton": "^16.1.0",
     "@tonconnect/sdk": "^3.3.1",
     "@tonconnect/ui-react": "^2.3.1",
     "body-parser": "^2.2.1",
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "tweetnacl": "^1.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
