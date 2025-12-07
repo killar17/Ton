@@ -5,7 +5,7 @@ import './index.css';
 
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
 
-const manifestUrl = 'https://fa61b8b1-b8df-472b-b08a-7aeb1a55d28e-00-3fpbwga9nn959.pike.replit.dev/tonconnect-manifest.json';
+const manifestUrl = 'https://tonbot-etpb8pt6i-killar17s-projects.vercel.app/tonconnect-manifest.json';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
